@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.47">
+  <style type="text/css">
+  </style>
+  <script type="text/javascript">
+    function call(phone){
+        let param={
+            type:'callPhone',
+            phone:phone
+        }
+        window.postMessage(JSON.stringify(param))
+    }
+  </script>
+</head>
+<body>
+  <div align="center">
+    <Button onclick="call('110')">拨打110</Button>
+    <Button onclick="call('119')">拨打119</Button>
+    <Button onclick="call('120')">拨打120</Button>
+  </div>
+</body>
+</html>
