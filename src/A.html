@@ -16,6 +16,29 @@
         }
         window.postMessage(JSON.stringify(param))
     }
+    function dialog(text){
+        alert(text)
+    }
+
+    window.onLoad=function() {
+        alert("aa")
+        document.addEventListener("message",function(e) {
+            alert(e.data)
+        })
+    }
+
+    /**
+     * 调用ReactNative的方法获取联系人信息
+     */
+    function getContacts() {
+        let param={
+            type:"getContact",
+        }
+        window.postMessage(JSON.stringify(param))
+        document.addEventListener("message",function(e) {
+            alert(e.data)
+        })
+    }
   </script>
 </head>
 <body>
@@ -23,6 +46,9 @@
     <Button onclick="call('110')">拨打110</Button>
     <Button onclick="call('119')">拨打119</Button>
     <Button onclick="call('120')">拨打120</Button>
+  </div>
+  <div align="center">
+    <Button onclick="getContacts()">获取联系人</Button>
   </div>
 </body>
 </html>
